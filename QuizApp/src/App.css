@@ -1,0 +1,47 @@
+.app {
+    min-height: 100vh;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+/* Light Theme */
+.app.light {
+    background-color: #ffffff;
+    color: #222222;
+}
+
+/* Dark Theme */
+.app.dark {
+    background-color: #0d0249;
+    color: #ffffff;
+}
+
+/* Quiz question card */
+.app.light .question-card {
+    background-color: #f5f5f5;
+    color: #222222;
+}
+
+.app.dark .question-card {
+    background-color: #252525;
+    color: #ffffff;
+}
+
+/* Answer options */
+.app.light .option {
+    background-color: #f8fafc;
+    color: #222222;
+    border: 1px solid #ddd;
+}
+
+.app.dark .option {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #555;
+}
+
+/* Hover effect */
+.app .option:hover {
+    transform: translateY(-2px);
+    cursor: pointer;
+}
