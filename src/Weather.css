@@ -1,0 +1,187 @@
+/* ==============================
+   CURRENT WEATHER DETAILS
+================================ */
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.weather-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(15px);
+    border: 1px solid #e5eaf1;
+    border-radius: 18px;
+    padding: 22px;
+    min-height: 155px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.weather-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #64748b;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.weather-icon {
+    font-size: 30px;
+}
+
+.weather-card h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 18px 0 8px;
+}
+
+.weather-card p {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Temperature card */
+
+.weather-card:first-child {
+    background: linear-gradient(135deg, #e0f2fe, #f0f9ff);
+    border: 1px solid #bae6fd;
+}
+
+.weather-card:first-child h2 {
+    font-size: 38px;
+    color: #0f3b70;
+}
+
+
+/* ==============================
+   HOURLY FORECAST
+================================ */
+
+.hours-container {
+    /* Important: occupy complete grid width */
+    grid-column: 1 / -1;
+
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    margin-top: 10px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-sizing: border-box;
+    height: 320px;
+}
+
+.hours-container>h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 5px 0 20px;
+}
+
+.hours-list {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    align-items: stretch;
+    padding: 5px 2px 15px;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+}
+
+.hours-card {
+    flex: 0 0 160px;
+    width: 160px;
+    min-width: 160px;
+    padding: 18px 15px;
+    background: #f1f5ff;
+    border: 1px solid #dbeafe;
+    border-radius: 14px;
+    box-sizing: border-box;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: all 0.3s ease;
+}
+
+.hours-card:hover {
+    transform: translateY(-4px);
+    background: #e8f0ff;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.1);
+}
+
+.hours-card h3 {
+    font-size: 16px;
+    color: #334155;
+    margin: 5px 0 12px;
+}
+
+.hours-card h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 5px 0 15px;
+    color: #2563eb;
+}
+
+.hours-card p {
+    width: 100%;
+    margin: 7px 0;
+    font-size: 13px;
+    color: #475569;
+    text-align: left;
+    line-height: 1.4;
+}
+
+
+/* ==============================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 900px) {
+    .weather-details {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 500px) {
+    .weather-details {
+        grid-template-columns: 1fr;
+        padding: 12px;
+        gap: 15px;
+    }
+
+    .weather-card {
+        padding: 18px;
+    }
+
+    .hours-container {
+        padding: 15px;
+    }
+
+    .hours-card {
+        flex-basis: 145px;
+        width: 145px;
+        min-width: 145px;
+    }
+}
